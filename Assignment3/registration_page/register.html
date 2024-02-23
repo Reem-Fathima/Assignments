@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+<div class="container">
+    <form class="form">
+        <h2>Registration</h2>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <h4>Select your gender:</h4>
+
+<!-- Radio buttons -->
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+
+        </div>
+
+        <div class="form-group">
+           <select>
+            <option value="option">Select Country</option>
+           <option value="India">India</option>
+           <option value="UAE">UAE</option>
+           <option value="US">US</option>
+           <option value="UK">UK</option>
+           <option value="Japan">Japan</option>
+        </select>
+
+        </div>
+           
+
+<div>
+<textarea id="message" name="message" rows="4" cols="50">
+Address
+</textarea>
+        </div>
+<div>
+    
+
+
+<input type="checkbox" name="preference1" value="preference1"><br>
+<label for="preference1" style="color: white;">I agree to the terms and conditions</label><br>
+
+</div>
+        
+        <button  type="submit">Register</button>
+    </form>
+</div>
+
+</body>
+</html>
