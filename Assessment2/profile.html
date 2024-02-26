@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+<link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    
+        <h2>User Data</h2>
+        <div id="userData" ></div>
+    
+   
+    <div >
+        <h3><a href="login.html">Login here</a></h3>
+    </div>
+
+
+
+    <script>
+        // Retrieve the data from localStorage
+        const userDataJSON = localStorage.getItem('userData');
+
+        // Check if data exists in localStorage
+        if (userDataJSON) {
+            // Parse the JSON string to an object
+            const userData = JSON.parse(userDataJSON);
+
+            // Update the HTML content with the retrieved data
+            const userDataDiv = document.getElementById('userData');
+            userDataDiv.innerHTML = `
+                <p><strong>Username:</strong> ${userData.username}</p>
+                <p><strong>First Name:</strong> ${userData.fname}</p>
+                <p><strong>Last Name:</strong> ${userData.lname}</p>
+                <p><strong>Date Of Birth:</strong> ${userData.date}</p>
+                <p><strong>Gender:</strong> ${userData.gender}</p>
+            `;
+        } else {
+            // If no data exists in localStorage, display a message
+            const userDataDiv = document.getElementById('userData');
+            userDataDiv.innerHTML = '<p>No user data found.</p>';
+        }
+    </script>
+</body>
+</html>

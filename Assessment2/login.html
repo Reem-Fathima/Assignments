@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="login.css">
+
+    </head>
+    <body>
+    
+        <div class="container">
+            <form id="form" >
+                <h3 style="color:white">Login</h3>
+                
+                <div class="form-group">
+                    <label for="name"><span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="User Name">
+                </div>
+                <div class="form-group">
+                    <label for="fname"><span class="required">*</span></label>
+                    <input type="password" id="password" name="password" required placeholder="Password">
+                </div>
+                <div class="form-group">
+                <input  type="submit" value="Login">
+            </div>
+            <div style="margin-left:30%;color:white;">
+                <a href="register.html">Not Registered?</a>
+            </div>
+
+
+           
+            <script>
+                // Event listener for form submission
+                document.getElementById('form').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent the default form submission
+            
+                    // Get input values
+                    const username = document.getElementById('name').value;
+                    const password = document.getElementById('password').value;
+            
+                    // Retrieve stored user data from local storage
+                    const userDataJSON = localStorage.getItem('userData');
+                    if (userDataJSON) {
+                        const userData = JSON.parse(userDataJSON);
+                        const storedUsername = userData.username;
+                        const storedPassword = userData.password;
+            
+                        // Compare input values with stored login details
+                        if (username === storedUsername && password === storedPassword) {
+                            alert('Login successful!');
+                            // Redirect to another page or perform other actions after successful login
+                            window.location.href="profile.html"
+                        } else {
+                            alert('Incorrect username or password. Please try again.');
+                        }
+                    } else {
+                        alert('No user data found. Please register first.');
+                        // Redirect to the registration page
+                        window.location.href = 'register.html';
+                    }
+                });
+            </script>
+    </body>
+</html>
