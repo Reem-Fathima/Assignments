@@ -1,0 +1,13 @@
+.list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px; /* Adjust width as needed */
+    padding: 20px;
+    background-color:seashell;
+    border: 1px solid #ccc;
+    height: 600px;
+  }
+  body{
+      background-image: url("../image/1600w-_Tcjok-d9b4.webp");
+  }
